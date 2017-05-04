@@ -8,9 +8,11 @@ source:
   fn: ephem-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/e/ephem/ephem-{{ version }}.tar.gz
   sha256: 7a4c82b1def2893e02aec0394f108d24adb17bd7b0ca6f4bc78eb7120c0212ac
+  patches:
+    - msvc9.patch  # [win and py2k]
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install
 
 requirements:

@@ -1,0 +1,15 @@
+--- ephem-3.7.6.0.orig/libastro-3.7.6/earthsat.c	2015-05-30 13:56:08.000000000 -0300
++++ ephem-3.7.6.0/libastro-3.7.6/earthsat.c	2017-05-04 19:54:17.306935609 -0300
+@@ -35,6 +35,12 @@
+ 
+ #define ESAT_MAG        2       /* fake satellite magnitude */
+ 
++#if defined(_MSC_VER) && (_MSC_VER >= 1310)
++#  define isnan(x) _isnan(x)
++#else
++#  define isnan(x) ((x) != (x))
++#endif
++
+ typedef double MAT3x3[3][3];
+ 
+ static int crazyOp (Now *np, Obj *op);
