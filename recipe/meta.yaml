@@ -5,19 +5,21 @@ package:
   version: {{ version }}
 
 source:
-  fn: ephem-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/e/ephem/ephem-{{ version }}.tar.gz
   sha256: 7a4c82b1def2893e02aec0394f108d24adb17bd7b0ca6f4bc78eb7120c0212ac
   patches:
     - msvc9.patch  # [win and py2k]
 
 build:
-  number: 1
-  script: python setup.py install
+  number: 1001
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
+    - pip
   run:
     - python
 
@@ -32,15 +34,22 @@ about:
   license_file: COPYING
   summary: Basic astronomical computations for Python
   description: |
-    "PyEphem provides basic astronomical computations for the Python programming
-    language. Given a date and location on the Earth's surface, it can compute
-    the positions of the Sun and Moon, of the planets and their moons, and of
-    any asteroids, comets, or earth satellites whose orbital elements the user
-    can provide."
+    PyEphem provides an ``ephem`` Python package for performing high-precision
+    astronomy computations. The underlying numeric routines are coded in C and
+    are the same ones that drive the popular `XEphem`_ astronomy application,
+    whose author, Elwood Charles Downey, generously gave permission for their
+    use in PyEphem. The name *ephem* is short for the word *ephemeris*, which
+    is the traditional term for a table giving the position of a planet,
+    asteroid, or comet for a series of dates. The design of PyEphem emphasizes
+    convenience and ease of use. Both celestial bodies and the observer's
+    location on Earth are represented by Python objects, while dates and
+    angles automatically print themselves in standard astronomical formats.
   doc_url: http://rhodesmill.org/pyephem/
   dev_url: https://github.com/brandon-rhodes/pyephem
 
 extra:
   recipe-maintainers:
+    - bsipocz
+    - mwcraig
     - tacaswell
     - ocefpaf
