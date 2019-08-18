@@ -7,8 +7,6 @@ package:
 source:
   url: https://pypi.io/packages/source/e/ephem/ephem-{{ version }}.tar.gz
   sha256: 607148429f85412915e32265779c0cf6d09f73aa97cf1ff0d101ac22c69c4436
-  patches:
-    - msvc9.patch  # [win and py2k]
 
 build:
   number: 0
