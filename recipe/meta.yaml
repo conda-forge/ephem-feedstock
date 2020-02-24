@@ -22,6 +22,10 @@ requirements:
     - python
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - ephem
     - ephem._libastro
