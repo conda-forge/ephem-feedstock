@@ -10,7 +10,7 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -32,8 +32,8 @@ test:
 
 about:
   home: http://rhodesmill.org/pyephem/
-  license: LGPL
-  license_file: COPYING
+  license: MIT
+  license_file: LICENSE
   summary: Basic astronomical computations for Python
   description: |
     PyEphem provides an ``ephem`` Python package for performing high-precision
