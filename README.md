@@ -3,7 +3,7 @@ About ephem
 
 Home: http://rhodesmill.org/pyephem/
 
-Package license: LGPL
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ephem-feedstock/blob/master/LICENSE.txt)
 

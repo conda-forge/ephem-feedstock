@@ -1,4 +1,4 @@
-{% set version = "4.0.0.1" %}
+{% set version = "4.0.0.2" %}
 
 package:
   name: ephem
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/e/ephem/ephem-{{ version }}.tar.gz
-  sha256: eca17a5149ce5666eb1500a0a9d90c9c97f90378e1879c7aaf55a890b9569cb8
+  sha256: d03de73ebf6a91681d597eb5b5d43bcf6f0c67e292bba2f9a974734b4f15757e
 
 build:
   number: 0
